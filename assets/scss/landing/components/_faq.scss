@@ -1,0 +1,11 @@
+.faq-accordion {
+    .toggle-icon{
+        transform: rotate(45deg);
+        background-color: lighten($primary, 20%);
+        transition: .3s;
+    }
+    .faq-active .toggle-icon {
+        transform: rotate(0deg);
+        background-color: $primary;
+    }
+}

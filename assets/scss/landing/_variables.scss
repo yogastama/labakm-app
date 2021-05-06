@@ -1,0 +1,70 @@
+$font-family-nunito: "Nunito Sans", sans-serif;
+
+$body-bg: #ffffff;
+$body-color: #626262;
+
+$facebook: #3b5999;
+$twitter: #55acee;
+$instagram: #e4405f;
+$linkedin: #0077b5;
+$telegram: #3487c6;
+$whatsapp: #25d366;
+$youtube: #cd201f;
+$printer: #cd201f;
+
+$primary: #3669e0;
+// $success: #3ae374;
+$secondary: #f78d23;
+
+$theme-colors: (
+  primary: $primary,
+  //   success: $success,
+  secondary: $secondary,
+);
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5,
+    ),
+    5: (
+      $spacer * 3,
+    ),
+    6: (
+      $spacer * 4.5,
+    ),
+    7: (
+      $spacer * 5,
+    ),
+    8: (
+      $spacer * 6,
+    ),
+    9: (
+      $spacer * 6.5,
+    ),
+    10: (
+      $spacer * 7,
+    ),
+    11: (
+      $spacer * 7.5,
+    ),
+    12: (
+      $spacer * 8,
+    ),
+  ),
+  $spacers
+);
+
+$border-radius-lg: 0.625rem;
+
+$zindex-navbar: 5000;

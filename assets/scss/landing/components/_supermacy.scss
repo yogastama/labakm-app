@@ -1,0 +1,58 @@
+.supermacy{
+    width: 100%;
+    display: flex;
+
+    .supermacy-item{
+        width: calc((100% - 3rem) / 3);
+
+        .supermacy-item-logo{
+            padding: 0 9px 18px 9px;
+            .supermacy-item-logo-inner{
+                height: 90px;
+                width: 90px;
+                border-radius: 50%;
+                background-color: rgba($primary, .15);
+                position: relative;
+
+                svg{
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    fill: $primary;
+                    height: 120%;
+                }
+            }
+        }
+
+        &:nth-child(2){
+            margin: 0 $spacer * 1.5;
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        .supermacy-item{
+            width: calc((100% - 2rem) / 3);
+            
+            &:nth-child(2){
+                margin: 0 1rem;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm){
+        flex-direction: column;
+
+        .supermacy-item{
+            width: 100%;
+            
+            &:nth-child(2){
+                margin: 0;
+            }
+
+            &:not(:last-of-type){
+                margin-bottom: $spacer * 2;
+            }
+        }
+    }
+}

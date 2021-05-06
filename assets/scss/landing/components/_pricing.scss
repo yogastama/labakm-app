@@ -1,0 +1,137 @@
+.pricing {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .pricing-item {
+    width: calc((100% / 3) - 2rem);
+  }
+
+  @include media-breakpoint-down(md) {
+    .pricing-item {
+      width: calc((100% / 2) - 2rem);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .pricing-item {
+      width: 100%;
+    }
+  }
+}
+
+.pricing-item {
+  width: 100%;
+  background-color: $white;
+  padding: $spacer * 1.5 0;
+  border-radius: 20px;
+  margin: $spacer 0;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  .pricing-level {
+    text-align: center;
+    padding: 0 $spacer * 1.5;
+
+    .pricing-level-inner {
+      display: inline-flex;
+      height: 80px;
+      width: 80px;
+      background-color: $gray-400;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      overflow: hidden;
+      line-height: 1;
+      font-size: 26px;
+      font-weight: 600;
+
+      &.pricing-level-sd {
+        background-color: rgba($danger, 0.3);
+        color: $danger;
+      }
+
+      &.pricing-level-smp {
+        background-color: rgba($primary, 0.3);
+        color: $primary;
+      }
+
+      &.pricing-level-smak {
+        background-color: rgba($gray-600, 0.3);
+        color: $gray-600;
+      }
+    }
+  }
+
+  .pricing-inner {
+    width: 100%;
+
+    .pricing-inner-item {
+      display: flex;
+      align-items: center;
+      padding: $spacer * 0.75 $spacer * 1.5 0 $spacer * 1.5;
+
+      &:not(:last-of-type) {
+        padding: $spacer * 0.75 $spacer * 1.5;
+        border-bottom: 2px solid $gray-200;
+      }
+
+      .pricing-inner-item-status {
+        height: 20px;
+        width: 20px;
+        line-height: 1;
+        flex-shrink: 0;
+        margin-right: $spacer;
+        border-radius: 50%;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: $box-shadow;
+
+        &.yes {
+          background-color: $success;
+        }
+
+        &.no {
+          background-color: $danger;
+        }
+      }
+    }
+  }
+
+  .pricing-action {
+    padding: 0 $spacer * 1.5;
+  }
+}
+
+.owl-carousel.owl-theme.pricing-carousel {
+  .owl-nav {
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin-top: $spacer * 0.5 !important;
+      background-color: rgba($primary, 0.4) !important;
+      color: $white !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      outline: none !important;
+
+      &.owl-prev {
+        padding: 0 $spacer * 1.5 !important;
+        border-radius: 13.5px 0 0 13.5px !important;
+      }
+
+      &.owl-next {
+        border-radius: 0 13.5px 13.5px 0 !important;
+        padding: 0 $spacer * 1.5 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.home-hero{
+    width: 100%;
+    // height: calc(100vh - (38px + .4rem));
+    height: calc(100vh - 38px);
+    background-color: $primary;
+    padding-top: 72px;
+    position: relative;
+    z-index: 1;
+    
+    .home-hero-inner{
+        height: calc(100% - 38px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .home-hero-item:nth-child(1){
+            width: 50%;
+            margin-right: $spacer;
+            flex-shrink: 0;
+        }
+
+        .home-hero-item:nth-child(2){
+            flex-grow: 1;
+        }
+
+        .home-hero-item-decoration{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .home-hero-item-decoration-screen{
+                width: 80%;
+                border-radius: 10px;
+                border: 10px solid $gray-300;
+                overflow: hidden;
+                box-shadow: $box-shadow;
+                background-color: $gray-300;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    .home-hero-footer{
+        width: 100%;
+        display: flex;
+        height: 38px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include media-breakpoint-down(md){
+        height: unset;
+        padding: calc(72px + (#{$spacer}  * 2)) 0 calc(#{$spacer}  * 2) 0;
+
+        .home-hero-inner{
+            flex-direction: column;
+
+            .home-hero-item:nth-child(1){
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.page-hero{
+    padding-top: calc(72px + (#{$spacer} * 1.5));
+    background-color: $primary;
+}

@@ -1,0 +1,46 @@
+.banner-login-for-more {
+  position: relative;
+  overflow: hidden;
+
+  .banner-login-for-more-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+
+      @include media-breakpoint-down(sm) {
+        height: unset;
+        width: 100%;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background-color: rgba($primary, 0.5);
+    }
+  }
+
+  .banner-login-for-more-inner {
+    position: relative;
+    z-index: 4;
+    padding: $spacer * 1.5;
+    color: $white;
+  }
+}
