@@ -1,0 +1,114 @@
+.navbar.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  background-color: $white;
+  border-bottom: 1px solid $gray-300;
+  z-index: $zindex-navbar;
+
+  .navbar-inner {
+    padding: $spacer * 0.8 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .navbar-direct {
+        display: block;
+        text-decoration: none;
+        color: $body-color;
+        height: 35px;
+        line-height: 35px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $gray-500;
+        }
+
+        img {
+          display: inline-block;
+          height: 100%;
+        }
+
+        span {
+          font-size: 28px;
+        }
+      }
+
+      .navbar-dropdown-toggle {
+        display: block;
+        height: 35px;
+        min-width: 35px;
+        line-height: 35px;
+        font-size: 21px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      .dropdown-menu {
+        padding: 0;
+        animation-name: fadein;
+        -webkit-animation-duration: 0.2s;
+        -moz-animation-duration: 0.2s;
+        -ms-animation-duration: 0.2s;
+        -o-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-fill-mode: both;
+        -moz-animation-fill-mode: both;
+        -ms-animation-fill-mode: both;
+        -o-animation-fill-mode: both;
+        animation-fill-mode: both;
+        flex-direction: column;
+        max-height: calc(100vh - ((46px + 62px) * 2));
+
+        &.show {
+          display: flex;
+        }
+
+        @include media-breakpoint-down(sm) {
+          position: fixed;
+          top: 46px;
+          left: 2.5vw;
+          right: 2.5vw;
+
+          .dropdown-item {
+            white-space: unset;
+          }
+        }
+
+        .dropdown-inner {
+          flex-grow: 1;
+          overflow-y: auto;
+          @include custom-scroll(6px);
+        }
+
+        .dropdown-footer {
+          flex-shrink: 0;
+          text-decoration: none;
+          color: $body-color;
+          border-top: 1px solid $gray-400;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+    transform: translate3d(0, 0, 0);
+  }
+}

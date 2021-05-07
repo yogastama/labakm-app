@@ -1,0 +1,86 @@
+.form-group-default {
+  &.is-invalid {
+    .form-group-default-input {
+      border-color: $danger;
+    }
+  }
+  .form-group-default-input {
+    min-height: 49px;
+    padding: 5px $input-padding-x;
+    color: $input-color;
+    background-color: $gray-100;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+    border-radius: $border-radius;
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    .form-group-default-label {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: calc(100% - 10px);
+      padding: 0 $input-padding-x;
+      font-family: $input-font-family;
+      font-weight: $input-font-weight;
+      line-height: normal;
+      background-color: transparent;
+      font-size: 14px;
+      color: $gray-600;
+      transition: 0.2s;
+    }
+
+    .form-control {
+      border: 0 !important;
+      box-shadow: none !important;
+      outline: none !important;
+      padding: 0;
+      font-size: 14px;
+      color: #000000;
+      border-radius: 0;
+      line-height: normal;
+      min-height: 37px;
+      background-color: transparent !important;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px $gray-100 inset !important;
+      }
+    }
+  }
+
+  &.form-group-default-filled .form-group-default-input {
+    .form-group-default-label {
+      font-size: 11px;
+      height: 21px;
+      line-height: 1;
+    }
+
+    .form-control {
+      height: auto;
+      min-height: 0;
+      margin-top: 21px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+}
+
+.custom-control-label {
+  cursor: pointer;
+}
+
+.invalid-feedback {
+  font-size: 11px;
+}

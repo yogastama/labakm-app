@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab AKM : Belajar AKM Online Mulai Dari Nol Rupiah</title>
+    <link rel="stylesheet" href="assets/css/app.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar topbar">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="navbar-inner">
+                            <div class="navbar-item">
+                                <a href="" class="navbar-direct">
+                                    <!-- @if($back) -->
+                                    <!-- <span>
+                                        <i class="ri-arrow-left-line"></i>
+                                    </span> -->
+                                    <!-- @else -->
+                                    <img src="assets/img/logo.png" alt="Logo">
+                                    <!-- @endif -->
+                                </a>
+                            </div>
+                            <div class="navbar-item">
+                                <div class="dropdown mr-4">
+                                    <span class="navbar-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="ri-notification-3-line"></i>
+                                        <span class="pulse-danger"></span>
+                                    </span>
+                                    <div class="dropdown-menu dropdown-menu-right with-footer">
+                                        <div class="dropdown-inner">
+                                            <a href="" class="dropdown-item d-flex align-items-center py-3">
+                                                <div class="square-image-40 rounded-circle mr-3" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <span style="background-color: #f53977" class="fs-18">
+                                                        <i class="ri-download-2-line"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="">
+                                                    <p class="mb-0 font-weight-bold fs-16">
+                                                        New file has been uploaded
+                                                    </p>
+                                                    <p class="fs-14 m-0 text-muted line-height-1">
+                                                        3 hours ago
+                                                    </p>
+                                                </div>
+                                            </a>
+                                            <a href="" class="dropdown-item d-flex align-items-center py-3">
+                                                <div class="square-image-40 rounded-circle mr-3" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <span style="background-color: #f53977" class="fs-18">
+                                                        <i class="ri-download-2-line"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="">
+                                                    <p class="mb-0 font-weight-bold fs-16">
+                                                        New file has been uploaded
+                                                    </p>
+                                                    <p class="fs-14 m-0 text-muted line-height-1">
+                                                        3 hours ago
+                                                    </p>
+                                                </div>
+                                            </a>
+                                            <a href="" class="dropdown-item d-flex align-items-center py-3">
+                                                <div class="square-image-40 rounded-circle mr-3" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <span style="background-color: #f53977" class="fs-18">
+                                                        <i class="ri-download-2-line"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="">
+                                                    <p class="mb-0 font-weight-bold fs-16">
+                                                        New file has been uploaded
+                                                    </p>
+                                                    <p class="fs-14 m-0 text-muted line-height-1">
+                                                        3 hours ago
+                                                    </p>
+                                                </div>
+                                            </a>
+                                            <!-- <div class="dropdown-item text-center text-muted fs-16 m-0 py-3">
+                                                You dont have unread notification
+                                            </div> -->
+                                        </div>
+                                        <a href="" class="dropdown-footer text-center py-2">
+                                            View all Notification
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown">
+                                    <div class="square-image-35 rounded-circle cursor-pointer" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <!-- @if(auth()->user()->picture) -->
+                                        <img src="assets/img/allie-2.jpeg" alt="Allie sherlok">
+                                        <!-- @else -->
+                                        <!-- <span class="bg-primary">
+                                            {{substr(auth()->user()->name, 0, 1)}}
+                                        </span> -->
+                                        <!-- @endif -->
+                                    </div>
+
+                                    <div class="dropdown-menu dropdown-menu-right py-2">
+                                        <div class="dropdown-inner">
+                                            <a href="" class="dropdown-item d-flex align-items-center py-2">
+                                                <div class="square-image-18 mr-3" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fs-18 text-body" style="background-color: unset;">
+                                                        <i class="ri-shield-user-fill"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="mb-0 font-weight-bold text-body fs-14">
+                                                    Account
+                                                </p>
+                                            </a>
+                                            <a href="" class="dropdown-item d-flex align-items-center py-2">
+                                                <div class="square-image-18 mr-3" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fs-18 text-body" style="background-color: unset;">
+                                                        <i class="ri-shut-down-line"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="mb-0 font-weight-bold text-body fs-14">
+                                                    Logout
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="page-content page-content-navbar">
+            <section id="section-header" class="mt-4 mt-md-5">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="font-weight-700 fs-28 text-capitalize mb-1">
+                                Selamat malam, Allie Sherlok
+                            </h4>
+                            <p class="fs-md-16 mb-0 font-weight-400 text-gray-600">
+                                Selamat datang di aplikasi LAB AKM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="assets/vendor/jquery-3.6.0/jquery.min.js"></script>
+    <script src="assets/vendor/popper-2.9.1/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap-4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

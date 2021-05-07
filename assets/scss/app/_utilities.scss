@@ -1,0 +1,506 @@
+@for $i from 1 through 100 {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .square-image#{$infix}-#{$i} {
+        height: $i * 1px;
+        width: $i * 1px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        span {
+          text-transform: uppercase;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: $i * 1px;
+          width: $i * 1px;
+          line-height: $i;
+          color: $light;
+          font-size: $i * 60 / 100 * 1px; //60%
+          background-color: $gray-500;
+          font-weight: bold;
+        }
+      }
+
+      .fs#{$infix}-#{$i} {
+        font-size: $i * 1px !important;
+      }
+
+      .w#{$infix}-#{$i} {
+        width: $i * 1px !important;
+      }
+
+      .h#{$infix}-#{$i} {
+        height: $i * 1px !important;
+      }
+
+      .border#{$infix}-#{$i} {
+        border-width: $i * 1px !important;
+      }
+
+      .fs#{$infix}-#{$i} {
+        font-size: $i * 1px !important;
+      }
+
+      .text-truncate#{$infix}-#{$i} {
+        display: -webkit-box;
+        line-clamp: $i;
+        box-orient: vertical;
+        -webkit-line-clamp: $i;
+        -webkit-box-orient: vertical;
+        -ms-line-clamp: $i;
+        -ms-box-orient: vertical;
+        line-height: normal;
+        word-break: break-word;
+        overflow: hidden;
+      }
+
+      .font-weight#{$infix}-#{$i * 100} {
+        font-weight: $i * 100 !important;
+      }
+
+      .line-height#{$infix}-#{$i} {
+        line-height: $i !important;
+      }
+
+      .line-height#{$infix}-#{$i}_5 {
+        line-height: $i * 1.5 !important;
+      }
+
+      @each $color, $value in $theme-colors {
+        .bg#{$infix}-#{$color}-lighten-#{$i} {
+          background-color: lighten($value, $i * 1%);
+        }
+
+        .bg#{$infix}-#{$color}-darken-#{$i} {
+          background-color: darken($value, $i * 1%);
+        }
+
+        .text#{$infix}-#{$color}-lighten-#{$i} {
+          color: lighten($value, $i * 1%);
+        }
+
+        .text#{$infix}-#{$color}-darken-#{$i} {
+          color: darken($value, $i * 1%);
+        }
+      }
+
+      .bg#{$infix}-dark-lighten-#{$i} {
+        background-color: lighten($dark, $i * 1%);
+      }
+
+      .bg#{$infix}-light-lighten-#{$i} {
+        background-color: lighten($light, $i * 1%);
+      }
+
+      .bg#{$infix}-dark-darken-#{$i} {
+        background-color: darken($dark, $i * 1%);
+      }
+
+      .bg#{$infix}-light-darken-#{$i} {
+        background-color: darken($light, $i * 1%);
+      }
+    }
+  }
+
+  .font-weight-#{$i * 100} {
+    font-weight: $i * 100 !important;
+  }
+
+  .line-height-#{$i} {
+    line-height: $i !important;
+  }
+
+  .line-height-#{$i}_5 {
+    line-height: $i * 1.5 !important;
+  }
+}
+
+@for $i from 1 through 9 {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      @each $color, $value in $theme-colors {
+        .bg#{$infix}-#{$color}-opacity-0#{$i} {
+          background-color: rgba($value, $i * 0.1);
+        }
+
+        .text#{$infix}-#{$color}-opacity-0#{$i} {
+          color: rgba($value, $i * 0.1);
+        }
+      }
+
+      .bg#{$infix}-white-opacity-0#{$i} {
+        background-color: rgba($white, $i * 0.1);
+      }
+
+      .border#{$infix}-#{$i} {
+        border-width: $i * 1px;
+      }
+
+      .text#{$infix}-white-opacity-0#{$i} {
+        color: rgba($white, $i * 0.1);
+      }
+    }
+  }
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    .justify-self#{$infix}-end {
+      justify-self: end;
+    }
+
+    .w#{$infix}-full {
+      width: 100%;
+    }
+
+    .h#{$infix}-full {
+      height: 100%;
+    }
+
+    .overflow#{$infix}-y-auto {
+      overflow-y: auto;
+    }
+
+    .border#{$infix}-normal {
+      border: $border-width solid $border-color;
+    }
+
+    @each $color, $value in $theme-colors {
+      .shadow#{$infix}-#{$color} {
+        box-shadow: 0 0.5rem 1rem rgba($value, 0.15);
+      }
+
+      .shadow#{$infix}-#{$color}-sm {
+        box-shadow: 0 0.125rem 0.25rem rgba($value, 0.075);
+      }
+
+      .shadow#{$infix}-#{$color}-lg {
+        box-shadow: 0 1rem 3rem rgba($value, 0.275);
+      }
+
+      .fill#{$infix}-#{$color} {
+        fill: $value;
+      }
+
+      .back-underline#{$infix}-#{$color} {
+        position: relative;
+        z-index: 0;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 5px;
+          bottom: 10px;
+          left: 0;
+          background-color: $value;
+          z-index: -1;
+        }
+      }
+
+      @keyframes water-flow-#{$color} {
+        0% {
+          box-shadow: 0 0 0 0 rgba($value, 0.1), 0 0 0 10px rgba($value, 0.2),
+            0 0 0 30px rgba($value, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 10px rgba($value, 0.2), 0 0 0 30px rgba($value, 0.2),
+            0 0 0 50px rgba($value, 0);
+        }
+      }
+
+      @keyframes water-flow-#{$color}-sm {
+        0% {
+          box-shadow: 0 0 0 0 rgba($value, 0.1), 0 0 0 10px rgba($value, 0.2),
+            0 0 0 20px rgba($value, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 10px rgba($value, 0.2), 0 0 0 20px rgba($value, 0.2),
+            0 0 0 30px rgba($value, 0);
+        }
+      }
+
+      @keyframes water-flow-#{$color}-xs {
+        0% {
+          box-shadow: 0 0 0 0 rgba($value, 0.1), 0 0 0 5px rgba($value, 0.2),
+            0 0 0 10px rgba($value, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 5px rgba($value, 0.2), 0 0 0 10px rgba($value, 0.2),
+            0 0 0 15px rgba($value, 0);
+        }
+      }
+
+      .animation-water-flow#{$infix}-#{$color} {
+        animation: water-flow-#{$color} 1.9s linear infinite;
+      }
+
+      .animation-water-flow#{$infix}-#{$color}-sm {
+        animation: water-flow-#{$color}-sm 1.9s linear infinite;
+      }
+
+      .animation-water-flow#{$infix}-#{$color}-xs {
+        animation: water-flow-#{$color}-xs 1.9s linear infinite;
+      }
+    }
+  }
+}
+
+.btn-white {
+  @include button-variant($white, $white);
+}
+
+.btn-google {
+  @include button-variant($google, $google);
+}
+
+.btn-rounded {
+  border-radius: calc(38px / 2);
+
+  &.btn-lg {
+    border-radius: calc(48px / 2);
+  }
+
+  &.btn-sm {
+    border-radius: calc(31px / 2);
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 95%;
+
+  @include media-breakpoint-up(md) {
+    width: 80%;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: 90%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+    max-width: 1140px;
+  }
+}
+
+.wrapper-static {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.row {
+  margin: 0;
+}
+
+.border-gray-100 {
+  border-color: $gray-100;
+}
+
+.border-gray-200 {
+  border-color: $gray-200;
+}
+
+.border-gray-300 {
+  border-color: $gray-300;
+}
+
+.border-gray-400 {
+  border-color: $gray-400;
+}
+
+.border-gray-500 {
+  border-color: $gray-500;
+}
+
+.border-gray-600 {
+  border-color: $gray-600;
+}
+
+.border-gray-700 {
+  border-color: $gray-700;
+}
+
+.border-gray-800 {
+  border-color: $gray-800;
+}
+
+.border-gray-900 {
+  border-color: $gray-900;
+}
+
+.text-black {
+  color: $black !important;
+}
+
+.text-gray-100 {
+  color: $gray-100 !important;
+}
+
+.text-gray-200 {
+  color: $gray-200 !important;
+}
+
+.text-gray-300 {
+  color: $gray-300 !important;
+}
+
+.text-gray-400 {
+  color: $gray-400 !important;
+}
+
+.text-gray-500 {
+  color: $gray-500 !important;
+}
+
+.text-gray-600 {
+  color: $gray-600 !important;
+}
+
+.text-gray-700 {
+  color: $gray-700 !important;
+}
+
+.text-gray-800 {
+  color: $gray-800 !important;
+}
+
+.text-gray-900 {
+  color: $gray-900 !important;
+}
+
+.bg-gray-100 {
+  background-color: $gray-100;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+
+.bg-gray-400 {
+  background-color: $gray-400;
+}
+
+.bg-gray-500 {
+  background-color: $gray-500;
+}
+
+.bg-gray-600 {
+  background-color: $gray-600;
+}
+
+.bg-gray-700 {
+  background-color: $gray-700;
+}
+
+.bg-gray-800 {
+  background-color: $gray-800;
+}
+
+.bg-gray-900 {
+  background-color: $gray-900;
+}
+
+.bg-facebook {
+  background-color: $facebook;
+}
+
+.bg-twitter {
+  background-color: $twitter;
+}
+
+.bg-instagram {
+  background-color: $instagram;
+}
+
+.bg-linkedin {
+  background-color: $linkedin;
+}
+
+.bg-telegram {
+  background-color: $telegram;
+}
+
+.bg-whatsapp {
+  background-color: $whatsapp;
+}
+
+.bg-youtube {
+  background-color: $youtube;
+}
+
+.bg-printer {
+  background-color: $printer;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.particles-js-canvas-el {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-roboto;
+  background-color: $body-bg;
+  color: $body-color;
+  min-height: 100vh;
+}
+
+.page-content {
+  overflow: hidden;
+  width: 100%;
+
+  &.page-content-navbar {
+    padding-top: 62px;
+  }
+}
+
+.image-center {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
