@@ -14,13 +14,15 @@ $printer: #cd201f;
 $google: #ea4335;
 
 $primary: #3669e0;
-// $success: #3ae374;
+$success: #3ae374;
 $secondary: #f78d23;
+$danger: #eb4d4b;
 
 $theme-colors: (
   primary: $primary,
-  //   success: $success,
+  success: $success,
   secondary: $secondary,
+  danger: $danger,
 );
 
 $spacer: 1rem;

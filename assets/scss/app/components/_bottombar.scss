@@ -20,7 +20,7 @@
     justify-content: space-between;
 
     .bottombar-item {
-      flex-grow: 1;
+      width: calc(100% / 5);
       text-align: center;
       line-height: 1;
       font-size: 10px;
