@@ -34,6 +34,10 @@
         }
       }
 
+      .flex-order#{$infix}-#{$i} {
+        order: $i;
+      }
+
       .fs#{$infix}-#{$i} {
         font-size: $i * 1px !important;
       }
@@ -44,6 +48,14 @@
 
       .h#{$infix}-#{$i} {
         height: $i * 1px !important;
+      }
+
+      .w#{$infix}-#{$i}-percent {
+        width: $i * 1% !important;
+      }
+
+      .h#{$infix}-#{$i}-percent {
+        height: $i * 1% !important;
       }
 
       .border#{$infix}-#{$i} {
@@ -288,7 +300,7 @@
 
 .wrapper {
   margin: 0 auto;
-  width: 95%;
+  width: 100%;
 
   @include media-breakpoint-up(md) {
     width: 80%;
@@ -490,6 +502,10 @@ body {
 
   &.page-content-navbar {
     padding-top: 62px;
+  }
+
+  &.page-content-bottombar {
+    padding-bottom: 68px;
   }
 }
 

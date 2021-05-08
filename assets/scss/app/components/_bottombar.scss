@@ -1,0 +1,56 @@
+.bottombar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: $zindex-bottombar;
+  background-color: $white;
+  border-top: 1px solid $gray-300;
+  display: block;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+
+  .bottombar-inner {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .bottombar-item {
+      flex-grow: 1;
+      text-align: center;
+      line-height: 1;
+      font-size: 10px;
+      text-decoration: none !important;
+      color: $body-color !important;
+      transition: background 0.5s;
+      padding: $spacer * 0.75 0;
+
+      .bottombar-icon {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      &:hover {
+        background-color: $gray-200 !important;
+        color: $black !important;
+      }
+
+      &.active {
+        color: $primary !important;
+      }
+    }
+  }
+}
+
+// .body-bottombar .section-container {
+//     margin-bottom: 58px;
+
+//     @include media-breakpoint-up(md) {
+//         margin-bottom: 0;
+//     }
+// }
